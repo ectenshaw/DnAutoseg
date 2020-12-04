@@ -80,7 +80,17 @@ def merge_dicts(*dict_args):
     for dictionary in dict_args:
         result.update(dictionary)
     return result
-
+'''
+import DnAutosegClassSet as DNCS
+import checkV14
+import AscendingNeuronClassSet as ANCS
+ANSet = ANCS.builder()
+checkV14.checkV14SKID(ANSet)
+ANCS.makeCSV(ANSet)
+DNSet = DNCS.builder()
+checkV14.checkV14SKID(DNSet)
+DNCS.makeCSV(DNSet)
+'''
 #builds a neuron object
 def builder(myList):
     # sets list of all skeleton IDs
@@ -142,14 +152,3 @@ def builder(myList):
     return myNeurons
 
 
-'''
-import DnAutosegClassSet as DNCS
-import checkV14
-import AscendingNeuronClassSet as ANCS
-ANSet = ANCS.builder()
-checkV14.checkV14SKID(ANSet)
-ANCS.makeCSV(ANSet)
-DNSet = DNCS.builder()
-checkV14.checkV14SKID(DNSet)
-DNCS.makeCSV(DNSet)
-'''

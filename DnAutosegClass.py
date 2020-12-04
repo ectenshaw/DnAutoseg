@@ -114,7 +114,8 @@ def builder(myList):
         if z in myAnnotations3:
             elem.annotations = myAnnotations3[z]
             p = elem.annotations
-            DNTypeReg = re.compile(r'^.*DN[a-z][0-9](?!Interneuron)(?!Exploration)(?!presynaptic)(?!postsynaptic)')
+            #DNp10 Non-Visual Input ClusterA
+            DNTypeReg = re.compile(r'^.*DN[a-z][0-9](?!Interneuron)(?!Exploration)(?!presynaptic)(?!postsynaptic)(?!.*Non-Visual)')
             DNNewType = re.compile(r'DN[a-z] type')
             DNPutative = re.compile(r'putative_DN[a-z]$')
 
@@ -166,6 +167,8 @@ def builder(myList):
                 elem.hemisphere = "LEFT HEMISPHERE"
             elif 'midLine' in p:
                 elem.hemisphere = "midLine"
+            elif 'FindSoma' in p:
+                elem.hemisphere = 'FindSoma'
 
 
             if elem.hemisphere is not None:
@@ -181,12 +184,12 @@ def builder(myList):
                 elem.status = 'Putative_Ascending'
             elif 'Halted' in p or 'Halted Neuron' in p:
                 elem.status = 'Halted'
+            elif 'unclear FW' in p:
+                elem.status = 'unclear FW'
+            elif 'no FW soma' in p:
+                elem.status = 'no FW soma'
             elif 'FindSoma' in p:
                 elem.status = 'FindSoma'
-            elif 'FindSoma' in p and 'unclear FW' in p:
-                elem.status = 'unclear FW'
-            elif 'FindSoma' in p and 'no FW soma' in p:
-                elem.status = 'no FW soma'
 
             if 'check DT' in p:
                 elem.dtSide = 'check DT'

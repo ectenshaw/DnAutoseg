@@ -155,9 +155,13 @@ DNa, DNb, DNc, DNd, DNg, DNp, misca, miscb, miscc, miscd, miscg, miscp = PTD.cre
 DNCS.makeCSV(DNa, "TypedDNa.csv")
 DNCS.makeCSV(DNp, "TypedDNp.csv")
 DNCS.makeCSV(DNg, "TypedDNg.csv")
+DNCS.makeCSV(DNb, "TypedDNb.csv")
+DNCS.makeCSV(DNc, "TypedDNc.csv")
 DNCS.makeCSV(misca, "MiscDNa.csv")
 DNCS.makeCSV(miscp, "MiscDNp.csv")
 DNCS.makeCSV(miscg, "MiscDNg.csv")
+DNCS.makeCSV(miscc, "MiscDNc.csv")
+DNCS.makeCSV(miscb, "MiscDNb.csv")
 
 PTD.makeJsonByClass(DNa)
 PTD.makeJsonByClass(DNp)
